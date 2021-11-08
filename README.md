@@ -1,4 +1,4 @@
-# location_tracking_example
+# loc_tracker
 
 A new Flutter project.
 
