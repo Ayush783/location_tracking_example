@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import "package:latlong2/latlong.dart" as Latlng;
 
 class Homepage extends StatelessWidget {
   const Homepage({Key key}) : super(key: key);
@@ -64,6 +66,31 @@ class Homepage extends StatelessWidget {
                   Container(
                     height: size.height * 0.4,
                     width: size.width,
+                    child: FlutterMap(
+                      options: MapOptions(
+                        center: Latlng.LatLng(28.7549869, 77.4950897),
+                        zoom: 15.0,
+                      ),
+                      layers: [
+                        TileLayerOptions(
+                          urlTemplate:
+                              "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                          subdomains: ['a', 'b', 'c'],
+                        ),
+                        MarkerLayerOptions(
+                          markers: [
+                            Marker(
+                              width: 80.0,
+                              height: 80.0,
+                              point: Latlng.LatLng(51.5, -0.09),
+                              builder: (ctx) => Container(
+                                child: FlutterLogo(),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                     color: Color(0xffd2d2d2),
                   ),
                 ],
