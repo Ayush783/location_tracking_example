@@ -23,15 +23,43 @@ class Homepage extends StatelessWidget {
                       Icon(
                         Icons.location_pin,
                         color: Color(0xffAEAEAE),
-                        size: 18,
+                        size: 16,
                       ),
-                      Text('  Your location'),
+                      Text(
+                        ' YOUR LOCATION',
+                        style: TextStyle(
+                          fontFamily: 'nova',
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xffaeaeae),
+                          fontSize: 12,
+                        ),
+                      ),
                     ],
                   ),
-                  Text('Asalat Nagar Muradnagar'),
-                  Divider(
-                    color: Color(0xffd2d2d2),
-                    thickness: 2.5,
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    child: Text(
+                      'Asalat Nagar Muradnagar',
+                      style: TextStyle(
+                        fontFamily: 'nova',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    child: Divider(
+                      color: Color(0xffaeaeae),
+                      thickness: 2,
+                      height: 12,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 4,
                   ),
                   Container(
                     height: size.height * 0.4,
@@ -64,36 +92,88 @@ class Homepage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Track your order'),
-                          Text('ETA: 20min'),
+                          Text(
+                            'Track your order',
+                            style: TextStyle(
+                              fontFamily: 'nova',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                          Text(
+                            'ETA: 20min',
+                            style: TextStyle(
+                              fontFamily: 'nova',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Color(0xffE37039),
+                            ),
+                          ),
                         ],
                       ),
-                      ListTile(
-                        leading: Icon(
-                          Icons.check_circle,
-                          color: Colors.green,
-                        ),
-                        title: Text('Order received'),
-                        contentPadding: EdgeInsets.zero,
-                        minLeadingWidth: 24,
+                      SizedBox(
+                        height: 16,
                       ),
-                      ListTile(
-                        leading: Icon(
-                          Icons.adjust_sharp,
-                          color: Colors.yellow,
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            top: BorderSide(
+                              width: 1,
+                              color: Color(0xffaeaeae),
+                            ),
+                          ),
                         ),
-                        title: Text('Food being prepared'),
-                        contentPadding: EdgeInsets.zero,
-                        minLeadingWidth: 24,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.check_circle,
+                            color: Colors.green,
+                          ),
+                          title: Text('Order received'),
+                          contentPadding: EdgeInsets.zero,
+                          minLeadingWidth: 24,
+                        ),
                       ),
-                      ListTile(
-                        leading: Icon(
-                          Icons.data_usage,
-                          color: Colors.grey,
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            top: BorderSide(
+                              width: 1,
+                              color: Color(0xffaeaeae),
+                            ),
+                            bottom: BorderSide(
+                              width: 1,
+                              color: Color(0xffaeaeae),
+                            ),
+                          ),
                         ),
-                        title: Text('Out for delivery'),
-                        contentPadding: EdgeInsets.zero,
-                        minLeadingWidth: 24,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.adjust_sharp,
+                            color: Color(0xffE37039),
+                          ),
+                          title: Text('Food being prepared'),
+                          contentPadding: EdgeInsets.zero,
+                          minLeadingWidth: 24,
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(
+                              width: 1,
+                              color: Color(0xffaeaeae),
+                            ),
+                          ),
+                        ),
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.data_usage,
+                            color: Colors.grey,
+                          ),
+                          title: Text('Out for delivery'),
+                          contentPadding: EdgeInsets.zero,
+                          minLeadingWidth: 24,
+                        ),
                       ),
                     ],
                   ),
